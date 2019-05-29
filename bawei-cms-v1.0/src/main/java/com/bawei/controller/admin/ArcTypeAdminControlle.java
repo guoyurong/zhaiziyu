@@ -44,26 +44,26 @@ public class ArcTypeAdminControlle {
 			@RequestParam(value="rows",required=false)String rows,
 			HttpServletResponse response) throws Exception{
 		PageBean pageBean = new PageBean(Integer.parseInt(page), Integer.parseInt(rows));
-		HashMap<String, Object> map = new HashMap<String,Object>();
+		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("start", pageBean.getStart());
 		map.put("size", pageBean.getPageSize());
-		List<ArcType> linklist = arcTypeService.list(map);
-		JSONArray jsonArray = JSONArray.fromObject(linklist);
+		List<ArcType> list = arcTypeService.list(map);
+		JSONArray jsonArray = JSONArray.fromObject(list);
 		Long total = arcTypeService.getTotal(map);
 		JSONObject result = new JSONObject();
 		result.put("rows", jsonArray);
 		result.put("total", total);
 		ResponseUtil.write(response, result);
-				return null;
+		return null;
 	}
-	 
+	
 	@RequestMapping("/save")
 	public String save(ArcType arcType,HttpServletRequest request,HttpServletResponse response) throws Exception{
-		int resultes = 0 ;
-		if (arcType.getId() == null) {
-			resultes = arcTypeService.add(arcType);
+		int resultes=0;
+		if (arcType.getId() != null) {
+			resultes=arcTypeService.add(arcType);
 		}else{
-			resultes = arcTypeService.update(arcType);
+			resultes=arcTypeService.update(arcType);
 		}
 		JSONObject result = new JSONObject();
 		if (resultes>0) {
@@ -73,7 +73,6 @@ public class ArcTypeAdminControlle {
 			result.put("success", false);
 		}
 		ResponseUtil.write(response, result);
-		
 		return null;
 	}
 	
