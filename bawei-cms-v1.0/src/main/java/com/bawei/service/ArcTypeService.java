@@ -26,7 +26,7 @@ public interface ArcTypeService {
 	 */
 	public ArcType findById(Integer id);
 	
-	public Long getTotal(Map<String, Object> map);
+	public Long getTotal(Map<String,Object> map);
 	
 	public Integer add(ArcType arcType);
 	

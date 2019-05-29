@@ -21,7 +21,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from t_arcType where id=#{id}
 	</select>
 	
-	<select id="getToal" parameterType="Map" resultType="Long">
+	<select id="getTotal" parameterType="Map" resultType="Long">
 		select count(*) from t_arcType
 	</select>
 	
