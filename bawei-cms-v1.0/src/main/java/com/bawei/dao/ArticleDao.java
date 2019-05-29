@@ -6,74 +6,74 @@ import java.util.Map;
 import com.bawei.entity.Article;
 
 /**
- * ����Dao�ӿ�
+ * 帖子Dao接口
  * @author user
  *
  */
 public interface ArticleDao {
 
 	/**
-	 * ��ȡ���µ�7������
+	 * 获取最新的7条帖子
 	 * @return
 	 */
 	public List<Article> getNewest();
 	
 	/**
-	 * ��ȡ����7���Ƽ�������
+	 * 获取最新7条推荐的帖子
 	 * @return
 	 */
 	public List<Article> getRecommend();
 	
 	/**
-	 * ��ȡ����5���õƵ�����
+	 * 获取最新5条幻灯的帖子
 	 * @return
 	 */
 	public List<Article> getSlide();
 	
 	/**
-	 * ��������������������µ�8������
+	 * 根据帖子类别来查找最新的8条数据
 	 * @param typeId
 	 * @return
 	 */
 	public List<Article> getIndex(Integer typeId);
 	
 	/**
-	 * ͨ��id��ѯ����
+	 * 通过id查询帖子
 	 * @param id
 	 * @return
 	 */
 	public Article findById(Integer id);
 	
 	/**
-	 * ��ȡ��һ������
+	 * 获取上一个帖子
 	 * @param id
 	 * @return
 	 */
 	public Article getLastArticle(Integer id);
 	
 	/**
-	 * ��ȡ��һ������
+	 * 获取下一个帖子
 	 * @param id
 	 * @return
 	 */
 	public Article getNextArticle(Integer id);
 	
 	/**
-	 * ��������
+	 * 更新帖子
 	 * @param article
 	 * @return
 	 */
 	public Integer update(Article article);
 	
 	/**
-	 * ����������ҳ��ѯ����
+	 * 根据条件分页查询帖子
 	 * @param map
 	 * @return
 	 */
 	public List<Article> list(Map<String,Object> map);
 	
 	/**
-	 * ��ȡ�ܼ�¼��
+	 * 获取总记录数
 	 * @param map
 	 * @return
 	 */
