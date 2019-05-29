@@ -7,6 +7,7 @@ import com.bawei.entity.ArcType;
 
 /**
  * �������Dao�ӿ�
+ * 
  * @author user
  *
  */
@@ -14,15 +15,25 @@ public interface ArcTypeDao {
 
 	/**
 	 * ����������ҳ��ѯ������𼯺�
+	 * 
 	 * @param map
 	 * @return
 	 */
-	public List<ArcType> list(Map<String,Object> map);
-	
+	public List<ArcType> list(Map<String, Object> map);
+
 	/**
 	 * ����id��ѯʵ��
+	 * 
 	 * @param id
 	 * @return
 	 */
 	public ArcType findById(Integer id);
+
+	public Long getTotal(Map<String, Object> map);
+
+	public Integer add(ArcType arcType);
+
+	public Integer update(ArcType arcType);
+
+	public Integer delete(Integer id);
 }

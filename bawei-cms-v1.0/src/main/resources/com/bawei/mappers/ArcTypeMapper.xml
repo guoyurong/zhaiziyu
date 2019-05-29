@@ -21,4 +21,35 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from t_arcType where id=#{id}
 	</select>
 	
+	<select id="getToal" parameterType="Map" resultType="Long">
+		select count(*) from t_arcType
+	</select>
+	
+	<insert id="add" parameterType="Link">
+		insert into t_arcType values(null,#{typeName},#{sortNo},#{keywords},#{description})
+	</insert>
+	
+	<update id="update" parameterType="Link">
+		update t_arcType
+		<set>
+			<if test="typeName!=null and typeName!=''">
+				typeName=#{typeName},
+			</if>
+			<if test="sortNo!=null and sortNo!=''">
+				sortNo=#{sortNo},
+			</if>
+			<if test="keywords!=null and keywords!=''">
+				keywords=#{keywords},
+			</if>
+			<if test="description!=null and description!=''">
+				description=#{description},
+			</if>
+		</set>
+		where id=#{id}
+	</update>
+	
+	<delete id="delete" parameterType="Integer">
+		delete from t_arcType where id=#{id}
+	</delete>
+	
 </mapper> 

@@ -30,4 +30,24 @@ public class ArcTypeServiceImpl implements ArcTypeService{
 		return arcTypeDao.findById(id);
 	}
 
+	@Override
+	public Long getTotal(Map<String, Object> map) {
+		return arcTypeDao.getTotal(map);
+	}
+
+	@Override
+	public Integer add(ArcType arcType) {
+		return arcTypeDao.add(arcType);
+	}
+
+	@Override
+	public Integer update(ArcType arcType) {
+		return arcTypeDao.update(arcType);
+	}
+
+	@Override
+	public Integer delete(Integer id) {
+		return arcTypeDao.delete(id);
+	}
+
 }
