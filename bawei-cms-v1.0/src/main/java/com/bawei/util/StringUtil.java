@@ -50,4 +50,17 @@ public class StringUtil {
 		}
 		return resultList;
 	}
+
+	/**
+	 * 模糊查询条件格式化工具方法
+	 * @param str
+	 * @return
+	 */
+	public static String formatLike(String str){
+		if(isNotEmpty(str)){		
+			return "%"+str+"%";		
+		}else{
+			return null;
+		}
+	}
 }

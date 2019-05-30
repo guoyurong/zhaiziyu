@@ -79,4 +79,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</where>
 	</select>
 	
+	<select id="getNumBytypeId" resultType="Integer" parameterType="Integer">
+		select count(*) t_article where typeId=#{typeId}
+	</select>
+	
+	<insert id="add" parameterType="Article">
+		insert into t_article values(null,#{title},#{publishDate},#{content},#{summary},#{titleColor},#{click},#{isRecommend},#{isSlide},#{slideImage},#{arcType.id},#{keyWords})
+	</insert>
+	
+	<delete id="delete" parameterType="Integer">
+		delete from t_article where id=#{id}
+	</delete>
+	
 </mapper> 

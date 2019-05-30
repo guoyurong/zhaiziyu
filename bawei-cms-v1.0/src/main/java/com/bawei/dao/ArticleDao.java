@@ -78,4 +78,10 @@ public interface ArticleDao {
 	 * @return
 	 */
 	public Long getTotal(Map<String,Object> map);
+	
+	public Integer getNumBytypeId(Integer typeId);
+	
+	public Integer add(Article article);
+	
+	public Integer delete(Integer id);
 }
