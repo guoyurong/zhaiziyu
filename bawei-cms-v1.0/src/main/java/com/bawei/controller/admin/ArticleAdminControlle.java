@@ -4,30 +4,24 @@ import java.io.File;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.ContextLoader;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.bawei.entity.ArcType;
 import com.bawei.entity.Article;
-import com.bawei.entity.Link;
 import com.bawei.entity.PageBean;
-import com.bawei.service.ArcTypeService;
 import com.bawei.service.ArticleService;
-import com.bawei.service.LinkService;
-import com.bawei.service.impl.ArcTypeServiceImpl;
 import com.bawei.service.impl.InitComponet;
+import com.bawei.util.DateUtil;
 import com.bawei.util.ResponseUtil;
 import com.bawei.util.StringUtil;
-import com.bawei.util.DateUtil;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
